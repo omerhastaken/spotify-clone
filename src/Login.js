@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 import React from 'react'
-import { loginUrl } from "./spotify";
+import { accessUrl } from "./spotify";
 
 function Login() {
   return (
@@ -10,7 +10,7 @@ function Login() {
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt=""
             />
-      <a href={loginUrl}>LOGIN WITH SPOTIFY</a>
+      <a href={accessUrl}>LOGIN WITH SPOTIFY</a>
     </Container>
   )
 }
@@ -22,8 +22,8 @@ const Container = styled.div`
     background-color: black;
 
     img {
-        width: 50%;
-        height: 50%;
+        width: 100%;
+        height: 100%;
     }
 
     a {
