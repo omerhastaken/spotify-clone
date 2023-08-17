@@ -1,10 +1,11 @@
 import React from 'react'
 import { styled } from 'styled-components'
+import Header from './Header'
 
-function Body() {
+function Body({ spotify }) {
   return (
     <Container>
-        <h1>Body</h1>
+        <Header spotify={spotify} />
     </Container>
   )
 }
