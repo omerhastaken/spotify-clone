@@ -1,11 +1,23 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import Header from './Header'
+import { DataLayerValue } from './DataLayer'
 
 function Body({ spotify }) {
+  const [{ discover_weekly }, dispatch] = DataLayerValue();
   return (
     <Container>
         <Header spotify={spotify} />
+        <BodyInfo>
+          <img src={discover_weekly?.images[0].url}
+           alt='' />
+            <InfoText>
+              <strong>PLAYLIST</strong>
+              <h2>Discover Weekly</h2>
+              <p>{discover_weekly?.description}</p>
+            </InfoText>
+        </BodyInfo>
+
     </Container>
   )
 }
@@ -18,6 +30,34 @@ const Container = styled.div`
     padding: 30px;
 
 
+`
+
+const BodyInfo = styled.div`
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+
+  img {
+    height: 20vw;
+    margin: 0 20px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  }
+
+`
+
+const InfoText = styled.div`
+  flex: 1;
+
+  h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+
+  }
+
+  p {
+    font-size: 14px;
+
+  }
 `
 
 

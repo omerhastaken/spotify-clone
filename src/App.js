@@ -43,6 +43,13 @@ useEffect(() => {
       })
     })
 
+    spotify.getPlaylist('37i9dQZEVXcFKVO3odpgjx').then(response => 
+      dispatch({
+        type: "SET_DISCOVER_WEEKLY",
+        discover_Weekly: response,
+      })
+      )
+
   }
   console.log(user);
   console.log(token);
