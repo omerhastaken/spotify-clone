@@ -2,6 +2,8 @@ import React from 'react'
 import { styled } from 'styled-components'
 import Header from './Header'
 import { DataLayerValue } from './DataLayer'
+import { Favorite, MoreHoriz, PlayCircleFilled } from '@mui/icons-material';
+import "./Body.css"
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = DataLayerValue();
@@ -17,6 +19,16 @@ function Body({ spotify }) {
               <p>{discover_weekly?.description}</p>
             </InfoText>
         </BodyInfo>
+
+        <Songs>
+          <SongIcons>
+            <Shuffle>
+             <PlayCircleFilled />
+            </Shuffle>
+            <Favorite fontSize='large' />
+            <MoreHoriz />
+          </SongIcons>
+        </Songs>
 
     </Container>
   )
@@ -60,5 +72,14 @@ const InfoText = styled.div`
   }
 `
 
+const Songs = styled.div`
+`
+
+const SongIcons = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const Shuffle = styled.div``
 
 export default Body
